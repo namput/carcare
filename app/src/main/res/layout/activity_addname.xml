@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".AddnameActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context="in.insideandroid.template.LoginActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbarThumbHorizontal="@null"
+            android:scrollbarThumbVertical="@null">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    app:srcCompat="@drawable/forget_password"
+                    android:contentDescription="TODO" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:text="คุณชื่ออะไร"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:cardBackgroundColor="@color/colorTextInputBackground"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/namemember"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@android:color/transparent"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="@color/md_black_1000"
+                        android:inputType="textEmailAddress"
+                        android:minWidth="320dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/savenext"
+                    style="@style/Button3"
+                    android:layout_width="342dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="สร้างร้านใหม่" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</RelativeLayout>

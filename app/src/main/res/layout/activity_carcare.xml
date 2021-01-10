@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/colorBackground"
+    tools:context=".carcare">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/actionbarOpacity"
+        app:title="ระบบจัดการร้านคาร์แคร์"
+        app:titleTextColor="#004578"
+        app:theme="@style/TransparentToolbar"
+        app:navigationIcon="@drawable/ic_back"/>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        tools:context="in.insideandroid.template.LoginActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbarThumbHorizontal="@null"
+            android:scrollbarThumbVertical="@null">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="ระบบบริหารร้านคาร์แคร์"
+
+                    android:textColor="#004578"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="2"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="ชื่อร้าน  "
+                        android:textColor="#004578"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/carcare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="12dp"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="2"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="เวลาเปิด"
+                        android:textColor="#004578"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/opent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="เวลาเปิด"
+                            android:textColor="#FBFCFD"
+                            android:textSize="18sp"
+                            app:layout_column="0"
+                            app:layout_row="0" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="2"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="เวลาปิด "
+                        android:textColor="#004578"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/close"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="เวลาเปิด"
+                            android:textColor="#FBFCFD"
+                            android:textSize="18sp"
+                            app:layout_column="0"
+                            app:layout_row="0" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="2"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ละติจูด  "
+                        android:textColor="#004578"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/lat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="12dp"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="2"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ลองจิจูด"
+                        android:textColor="#004578"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/lon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="12dp"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="center"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="2"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="สถานะเปิดร้าน  "
+                        android:textColor="#004578"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <Switch
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:checked="false"
+                        android:textOn="เปิดร้าน"
+                        android:textOff="ปิดร้าน"
+                        android:textColor="#004785"
+                        android:textSize="18dp"
+                        android:thumbTint="#FF5722" />
+
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <Button
+                    android:id="@+id/save"
+                    style="@style/Button1"
+                    android:layout_width="342dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="ปรับปรุงข้อมูล" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="เพิ่มสมาชิก"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="#004578"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="1"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="สิทธิ์ในการจัดการระบบบริหารคาร์แคร์"
+                        android:textColor="@color/md_black_1000" />
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="สิทธิ์ในการจัดการคิว"
+                        android:textColor="@color/md_black_1000" />
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="สิทธิ์ในการดูประวัติ"
+                        android:textColor="@color/md_black_1000" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="1"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/md_blue_grey_800"
+
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <Spinner
+                            android:id="@+id/carsize"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <Button
+                    android:id="@+id/button_send"
+                    style="@style/Button1"
+                    android:layout_width="342dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="เพิ่มสมาชิก" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="สมาชิก"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="#004578"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/listView2"/>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</RelativeLayout>

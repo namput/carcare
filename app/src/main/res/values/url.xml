@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="url">https://www.qcarcaretak.com/api/</string>
+    <string name="login">logincarcare</string>
+    <string name="create">create</string>
+    <string name="profile">profile</string>
+    <string name="updatename">updatename</string>
+    <string name="member">member</string>
+    <string name="showprofile">showprofile</string>
+    <string name="showcar">showcar</string>
+    <string name="showcolor">showcolor</string>
+    <string name="carmember">carmember</string>
+    <string name="history">history</string>
+    <string name="facebook">https://www.facebook.com/a.aek1998</string>
+    <string name="listmember">listmember</string>
+    <string name="listcarcare">listcarcare</string>
+    <string name="listcarmember">listcarmember</string>
+    <string name="attribute">attribute</string>
+    <string name="queue">queue</string>
+    <string name="statusqueue">checkqueue</string>
+    <string name="checkstatus">checkstatus</string>
+    <string name="updatequeue">updatequeue</string>
+    <string name="updaterating">RatingReview</string>
+    <string name="addcarcare">addcarcare</string>
+    <string name="addname">addname</string>
+    <string name="menucarcare">menucarcare</string>
+    <string name="updatecarcare">updatecarcare</string>
+</resources>
