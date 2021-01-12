@@ -25,4 +25,6 @@
     <string name="addname">addname</string>
     <string name="menucarcare">menucarcare</string>
     <string name="updatecarcare">updatecarcare</string>
+    <string name="membercarcare">member_carcare</string>
+    <string name="addmember">addmember</string>
 </resources>

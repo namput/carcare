@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.gson.JsonObject;
@@ -28,6 +29,7 @@ public class menuqcar extends AppCompatActivity {
         final LinearLayout queue = (LinearLayout) findViewById(R.id.queue);
         final LinearLayout history = (LinearLayout) findViewById(R.id.history);
 
+
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
             id= bundle.getString("member_id");
@@ -49,7 +51,6 @@ public class menuqcar extends AppCompatActivity {
                                         String carcare_status = result.get("carcare_status").getAsString();
                                         String carcare_lat=result.get("carcare_lat").toString();
                                         String carcare_long=result.get("carcare_long").toString();
-
 
                                         switch (carcare_lat){
                                             case "null":carcare_lat = null;
