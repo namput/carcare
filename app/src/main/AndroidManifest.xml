@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Newcar">
-        <activity android:name=".AddnameActivity"></activity>
+        <activity android:name=".MemberActivity"></activity>
+        <activity android:name=".AddnameActivity" />
         <activity android:name=".AddCarcareActivity" />
         <activity android:name=".carcare" />
         <activity android:name=".menuqcar" />

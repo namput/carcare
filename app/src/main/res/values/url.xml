@@ -27,4 +27,5 @@
     <string name="updatecarcare">updatecarcare</string>
     <string name="membercarcare">member_carcare</string>
     <string name="addmember">addmember</string>
+    <string name="listmembercarcare">listmembercarcare</string>
 </resources>

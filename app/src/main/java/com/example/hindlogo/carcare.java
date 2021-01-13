@@ -1,16 +1,22 @@
 package com.example.hindlogo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -31,8 +37,6 @@ public class carcare extends AppCompatActivity {
     int t1m;
     int t2H;
     int t2m;
-    String urlmembercarcare;
-    String idmember_carcare;
     String carcare_opent;
     String carcare_name;
     String carcare_id;
@@ -52,8 +56,6 @@ public class carcare extends AppCompatActivity {
     CheckBox permission1;
     CheckBox permission2;
     CheckBox permission3;
-    String urladdmember;
-    Spinner spinner;
     Button savecar;
 
     @Override
@@ -62,12 +64,19 @@ public class carcare extends AppCompatActivity {
         setContentView(R.layout.activity_carcare);
         url = getString(R.string.url);
         urlupdatecarcare = getString(R.string.updatecarcare);
-        urlmembercarcare = getString(R.string.membercarcare);
-        urladdmember = getString(R.string.addmember);
 
         permission1 = (CheckBox)findViewById(R.id.permission1);
         permission2 = (CheckBox)findViewById(R.id.permission2);
         permission3 = (CheckBox)findViewById(R.id.permission3);
+
+        // toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
@@ -87,8 +96,8 @@ public class carcare extends AppCompatActivity {
             lon = (EditText)findViewById(R.id.lon);
             savecar = (Button)findViewById(R.id.savecar);
             status = (Switch) findViewById(R.id.status);
-            spinner = (Spinner) findViewById(R.id.spinner);
-            Button addmember = (Button) findViewById(R.id.addmember);
+
+            Button managemember = (Button) findViewById(R.id.managemember);
 
             LocalTime startTime = LocalTime.parse(carcare_opent);
             LocalTime endTime = LocalTime.parse(carcare_close);
@@ -123,7 +132,16 @@ public class carcare extends AppCompatActivity {
                     }
                 }
             });
+            managemember.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(com.example.hindlogo.carcare.this,MemberActivity.class);
+                    intent.putExtra("member_id",member_id);
+                    intent.putExtra("carcare_id",carcare_id);
+                    startActivity(intent);
 
+                }
+            });
             timeopent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -161,90 +179,21 @@ public class carcare extends AppCompatActivity {
                     timeendPickerDialog.show();
                 }
             });
-
-            spinnermember();
-            addmember.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-
-//                                    Toast.makeText(com.example.hindlogo.carcare.this,"อีก "+permission1.isChecked(),Toast.LENGTH_LONG).show();
-                                    Ion.with(com.example.hindlogo.carcare.this)
-                                            .load(url+urladdmember)
-                                            .setBodyParameter("member_id",member_id)
-                                            .setBodyParameter("carcare_id",carcare_id)
-                                            .setBodyParameter("addmember_id",idmember_carcare)
-                                            .setBodyParameter("permission1", String.valueOf(permission1.isChecked()))
-                                            .setBodyParameter("permission2", String.valueOf(permission2.isChecked()))
-                                            .setBodyParameter("permission3", String.valueOf(permission3.isChecked()))
-                                            .asString()
-                                            .setCallback(new FutureCallback<String>() {
-                                                @Override
-                                                public void onCompleted(Exception e, String result) {
-                                                    switch (result){
-                                                        case "1":
-                                                            spinnermember();
-                                                            Toast.makeText(com.example.hindlogo.carcare.this,"เพิ่มข้อมูลสำเร็จ",Toast.LENGTH_LONG).show();
-                                                            break;
-                                                        case "0":
-                                                            Toast.makeText(com.example.hindlogo.carcare.this,"ไม่ได้เพิ่มข้อมูลสำเร็จ",Toast.LENGTH_LONG).show();
-                                                            break;
-                                                        default:
-                                                            Toast.makeText(com.example.hindlogo.carcare.this,"เกิดข้อผิดพลาด",Toast.LENGTH_LONG).show();
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                }
-                            });
-
-
-//            Toast.makeText(carcare.this,"ไอดีรถ"+carcare_id+"ชื่อรถ"+carcare_name+"เวลาเปิด"+carcare_opent+"เวลาปิด"+carcare_close+"สถานะ"+carcare_status+"lat"+carcare_lat+"long"+carcare_long, Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void spinnermember() {
-        Ion.with(com.example.hindlogo.carcare.this)
-                .load(url+urlmembercarcare)
-                .asJsonArray()
-                .setCallback(new FutureCallback<JsonArray>() {
-                    @Override
-                    public void onCompleted(Exception e, JsonArray result) {
-                        ArrayList<Contact> itemArray=new ArrayList<>();
-                        if (result!=null){
-                            int len =result.size();
-                            for (int i=0;i<len;i++){
-                                JsonObject item = (JsonObject)result.get(i);
-                                String id = item.get("member_id").getAsString();
-                                String name = item.get("member_name").getAsString();
-                                itemArray.add(new Contact(name,id));
-                            }
-                        }
-                        ArrayAdapter<Contact> adapter =
-                                new ArrayAdapter<Contact>(getApplicationContext(), R.layout.row, itemArray);
-                        adapter.setDropDownViewResource(R.layout.row);
-
-                        spinner.setAdapter(adapter);
-                        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                            @Override
-                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                Contact item = itemArray.get(position);
-                                idmember_carcare = item.getContact_id();
-                            }
-
-                            @Override
-                            public void onNothingSelected(AdapterView<?> parent) {
-
-                            }
-                        });
-
-                        savecar.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                savecarnow();
-                            }
-                        });
+            savecar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    savecarnow();
+                }
+            });
                     }
-                });
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void savecarnow() {
@@ -253,9 +202,7 @@ public class carcare extends AppCompatActivity {
         String carcareclose = timeclose.getText().toString();
         String carcarelat = lat.getText().toString();
         String carcarelong = lon.getText().toString();
-//                    String  statuscarcare;
 
-//        Toast.makeText(com.example.hindlogo.carcare.this,"5555",Toast.LENGTH_LONG).show();
         Ion.with(com.example.hindlogo.carcare.this)
                 .load(url+ urlupdatecarcare)
                 .setBodyParameter("member_id",member_id)
@@ -276,7 +223,7 @@ public class carcare extends AppCompatActivity {
                                 Toast.makeText(com.example.hindlogo.carcare.this,"ปรับปรุงข้อมูลสำเร็จ",Toast.LENGTH_LONG).show();
                                 break;
                             case "0":
-                                Toast.makeText(com.example.hindlogo.carcare.this,"ไม่ได้ปรับปรุงข้อมูลสำเร็จ",Toast.LENGTH_LONG).show();
+                                Toast.makeText(com.example.hindlogo.carcare.this,"ไม่ได้ปรับปรุงข้อมูล",Toast.LENGTH_LONG).show();
                                 break;
                             default:
                                 Toast.makeText(com.example.hindlogo.carcare.this,"เกิดข้อผิดพลาด",Toast.LENGTH_LONG).show();

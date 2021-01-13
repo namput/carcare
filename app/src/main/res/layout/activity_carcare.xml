@@ -38,7 +38,7 @@
 
             <LinearLayout
                 android:id="@+id/li"
-                android:background="@color/md_amber_100"
+                android:background="@color/colorBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -297,12 +297,13 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
                         android:checked="false"
-                        android:background="@color/colorIcon"
+                        android:background="@color/md_amber_400"
                         android:textOn="เปิดร้าน"
                         android:textOff="ปิดร้าน"
                         android:textColor="#004785"
                         android:textSize="18dp"
-                        android:thumbTint="#FF5722" />
+                        android:thumbTint="#FF5722"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 
                 </androidx.gridlayout.widget.GridLayout>
@@ -316,130 +317,16 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
                     android:text="ปรับปรุงข้อมูล" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_below="@+id/li"
-                android:layout_height="wrap_content"
-                android:background="@color/md_deep_orange_100"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="เพิ่มสมาชิก"
-                    android:layout_marginLeft="50dp"
-                    android:textColor="#004578"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <androidx.gridlayout.widget.GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:alignmentMode="alignMargins"
-                    app:columnCount="1"
-                    app:columnOrderPreserved="false"
-                    app:rowCount="1">
-
-                    <CheckBox
-                        android:id="@+id/permission1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="#009688"
-                        android:checked="true"
-                        android:text="สิทธิ์ในการจัดการระบบบริหารคาร์แคร์"
-                        android:textColor="#004578" />
-
-                    <CheckBox
-                        android:id="@+id/permission2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="#FF9800"
-                        android:checked="true"
-                        android:text="สิทธิ์ในการจัดการคิว"
-                        android:textColor="#004578" />
-
-                    <CheckBox
-                        android:id="@+id/permission3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="#E91E63"
-                        android:checked="true"
-                        android:text="สิทธิ์ในการดูประวัติ"
-                        android:textColor="#004578" />
-
-                </androidx.gridlayout.widget.GridLayout>
-
-                <androidx.gridlayout.widget.GridLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    app:alignmentMode="alignMargins"
-                    app:columnCount="2"
-                    app:columnOrderPreserved="false"
-                    app:rowCount="1">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="เลือกสมาชิก"
-                        android:textColor="#004578"
-                        android:textSize="18sp"
-                        app:layout_column="0"
-                        app:layout_row="0" />
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardBackgroundColor="@color/md_blue_grey_800"
-
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:layout_gravity="bottom">
-
-
-                        <Spinner
-                            android:id="@+id/spinner"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:minWidth="200dp"
-                            android:minHeight="45dp" />
-                    </androidx.cardview.widget.CardView>
-
-                </androidx.gridlayout.widget.GridLayout>
-
                 <Button
-                    android:id="@+id/addmember"
-                    style="@style/Button1"
+                    android:id="@+id/managemember"
+                    style="@style/Button6"
                     android:layout_width="342dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
-                    android:text="เพิ่มสมาชิก" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="สมาชิก"
-                    android:layout_marginLeft="50dp"
-                    android:textColor="#004578"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/listView2"/>
-
-
+                    android:text="จัดการสมาชิก" />
             </LinearLayout>
-
         </RelativeLayout>
-
-
     </ScrollView>
-</RelativeLayout>
+        </RelativeLayout>
