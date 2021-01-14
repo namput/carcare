@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/colorBackground"
+    android:background="#004578"
     tools:context=".carcare">
 
     <androidx.appcompat.widget.Toolbar
@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:background="@color/actionbarOpacity"
         app:title="ระบบจัดการร้านคาร์แคร์"
-        app:titleTextColor="#004578"
+        app:titleTextColor="#fff"
         app:theme="@style/TransparentToolbar"
-        app:navigationIcon="@drawable/ic_back"/>
+        app:navigationIcon="@drawable/ic_back_white"/>
 
     <ScrollView
         android:id="@+id/scroll"
@@ -38,7 +38,6 @@
 
             <LinearLayout
                 android:id="@+id/li"
-                android:background="@color/colorBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -51,7 +50,7 @@
                     android:layout_marginBottom="8dp"
                     android:text="ระบบบริหารร้านคาร์แคร์"
 
-                    android:textColor="#004578"
+                    android:textColor="#FFF"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -70,7 +69,7 @@
                         android:layout_margin="10dp"
                         android:gravity="center"
                         android:text="ชื่อร้าน  "
-                        android:textColor="#004578"
+                        android:textColor="#fff"
                         android:textSize="18sp"
                         app:layout_column="0"
                         app:layout_row="0" />
@@ -79,7 +78,7 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardBackgroundColor="@color/colorBackground"
                         app:cardCornerRadius="5dp"
                         app:cardElevation="0dp">
 
@@ -92,6 +91,7 @@
                             android:background="@android:color/transparent"
                             android:drawablePadding="12dp"
                             android:imeOptions="actionDone"
+                            android:textColor="#004578"
                             android:inputType="text"
                             android:minWidth="320dp"
                             android:minHeight="45dp"
@@ -113,7 +113,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="เวลาเปิด"
-                        android:textColor="#004578"
+                        android:textColor="#fff"
                         android:textSize="18sp"
                         app:layout_column="0"
                         app:layout_row="0" />
@@ -124,7 +124,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardBackgroundColor="#fff"
                         app:cardElevation="0dp"
                         app:layout_gravity="bottom">
 
@@ -134,7 +134,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:text="เวลาเปิด"
-                            android:textColor="#FBFCFD"
+                            android:textColor="#004578"
                             android:textSize="18sp"
                             app:layout_column="0"
                             app:layout_row="0" />
@@ -155,7 +155,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="เวลาปิด "
-                        android:textColor="#004578"
+                        android:textColor="#fff"
                         android:textSize="18sp"
                         app:layout_column="0"
                         app:layout_row="0" />
@@ -164,7 +164,7 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardBackgroundColor="#fff"
                         app:cardCornerRadius="5dp"
                         app:cardElevation="0dp"
                         app:layout_gravity="bottom">
@@ -175,7 +175,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:text="เวลาเปิด"
-                            android:textColor="#FBFCFD"
+                            android:textColor="#004578"
                             android:textSize="18sp"
                             app:layout_column="0"
                             app:layout_row="0" />
@@ -196,7 +196,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="ละติจูด  "
-                        android:textColor="#004578"
+                        android:textColor="#fff"
                         android:textSize="18sp"
                         app:layout_column="0"
                         app:layout_row="0" />
@@ -205,7 +205,7 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardBackgroundColor="#fff"
                         app:cardCornerRadius="5dp"
                         app:cardElevation="0dp"
                         app:layout_gravity="bottom">
@@ -218,6 +218,7 @@
                             android:layout_marginRight="12dp"
                             android:background="@android:color/transparent"
                             android:drawablePadding="12dp"
+                            android:textColor="#004578"
                             android:imeOptions="actionDone"
                             android:inputType="text"
                             android:minWidth="320dp"
@@ -240,7 +241,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="ลองจิจูด"
-                        android:textColor="#004578"
+                        android:textColor="#fff"
                         android:textSize="18sp"
                         app:layout_column="0"
                         app:layout_row="0" />
@@ -249,7 +250,7 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        app:cardBackgroundColor="@color/md_blue_grey_800"
+                        app:cardBackgroundColor="#fff"
                         app:cardCornerRadius="5dp"
                         app:cardElevation="0dp"
                         app:layout_gravity="bottom">
@@ -262,6 +263,7 @@
                             android:layout_marginRight="12dp"
                             android:background="@android:color/transparent"
                             android:drawablePadding="12dp"
+                            android:textColor="#004578"
                             android:imeOptions="actionDone"
                             android:inputType="text"
                             android:minWidth="320dp"
@@ -286,7 +288,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="สถานะเปิดร้าน  "
-                        android:textColor="#004578"
+                        android:textColor="#fff"
                         android:textSize="18sp"
                         app:layout_column="0"
                         app:layout_row="0" />
@@ -310,7 +312,7 @@
 
                 <Button
                     android:id="@+id/savecar"
-                    style="@style/Button1"
+                    style="@style/Button7"
                     android:layout_width="342dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"

@@ -25,10 +25,16 @@ public class menuqcar extends AppCompatActivity {
         final String urlmenucarcare = getString(R.string.menucarcare);
         final String url = getString(R.string.url);
         final LinearLayout menucarcare = (LinearLayout) findViewById(R.id.listcar);
-        final LinearLayout mcontact = (LinearLayout) findViewById(R.id.contact);
+        final LinearLayout logout = (LinearLayout) findViewById(R.id.menulogout);
         final LinearLayout queue = (LinearLayout) findViewById(R.id.queue);
         final LinearLayout history = (LinearLayout) findViewById(R.id.history);
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(menuqcar.this,ContactActivity.class));
+            }
+        });
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
@@ -88,7 +94,6 @@ public class menuqcar extends AppCompatActivity {
 
                 }
             });
-
 
         }
 
