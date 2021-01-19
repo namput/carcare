@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff4997"
+    tools:context=".MenuattributeActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/actionbarOpacity"
+        app:title="ระบบจัดการร้านคาร์แคร์"
+        app:titleTextColor="#fff"
+        app:theme="@style/TransparentToolbar"
+        app:navigationIcon="@drawable/ic_back_white"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:id="@+id/scr"
+        android:layout_width="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context="in.insideandroid.template.LoginActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbarThumbHorizontal="@null"
+            android:scrollbarThumbVertical="@null">
+
+            <LinearLayout
+                android:id="@+id/li"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="ระบบบริหารร้านคาร์แคร์"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="1"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ชื่อรายการ"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:gravity="center|left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="12dp"
+                            android:textColor="#004578"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+                </androidx.gridlayout.widget.GridLayout>
+                    <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="1"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ไซต์ S"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+
+                            android:gravity="left|center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="12dp"
+                            android:textColor="#004578"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="1"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ไซต์ M"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:gravity="left|center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="12dp"
+                            android:textColor="#004578"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="1"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ไซต์ L"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:gravity="left|center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="12dp"
+                            android:textColor="#004578"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="1"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ไซต์ XL"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:gravity="left|center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="12dp"
+                            android:textColor="#004578"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:alignmentMode="alignMargins"
+                    app:columnCount="1"
+                    app:columnOrderPreserved="false"
+                    app:rowCount="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ไซต์ XXL"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:layout_gravity="bottom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/lon"
+                            android:gravity="left|center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="12dp"
+                            android:textColor="#004578"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:minWidth="320dp"
+                            android:minHeight="45dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <Button
+                    android:id="@+id/savecar"
+                    style="@style/Button1"
+                    android:layout_width="342dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="ปรับปรุงข้อมูล" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@id/li"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="รายการบริการ"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/listView"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

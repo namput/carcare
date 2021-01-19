@@ -199,12 +199,22 @@
                                 android:textSize="18sp"
                                 android:layout_marginBottom="8dp"
                                 android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/abc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="ผศ.อำนาจ ทับเกิด"
+                                android:textColor="@color/colorBackground"
+                                android:textSize="18sp"
+                                android:layout_marginBottom="8dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
                 </androidx.gridlayout.widget.GridLayout>
                 <Button
-                    android:id="@+id/managemember"
+                    android:id="@+id/singout"
                     style="@style/Button8"
                     android:gravity="center"
                     android:layout_width="342dp"

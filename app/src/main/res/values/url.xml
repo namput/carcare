@@ -2,7 +2,7 @@
 <resources>
     <string name="url">https://www.qcarcaretak.com/api/</string>
     <string name="login">logincarcare</string>
-    <string name="create">create</string>
+    <string name="create">createcarcare</string>
     <string name="profile">profile</string>
     <string name="updatename">updatename</string>
     <string name="member">member</string>
@@ -28,4 +28,6 @@
     <string name="membercarcare">member_carcare</string>
     <string name="addmember">addmember</string>
     <string name="listmembercarcare">listmembercarcare</string>
+    <string name="gettoken">gettoken</string>
+    <string name="listattribute">listattribute</string>
 </resources>

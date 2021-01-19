@@ -16,6 +16,7 @@ import com.koushikdutta.ion.Ion;
 public class menuqcar extends AppCompatActivity {
 
     private String id;
+    private String carcare_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class menuqcar extends AppCompatActivity {
         final LinearLayout logout = (LinearLayout) findViewById(R.id.menulogout);
         final LinearLayout queue = (LinearLayout) findViewById(R.id.queue);
         final LinearLayout history = (LinearLayout) findViewById(R.id.history);
+        final LinearLayout listattribute = (LinearLayout) findViewById(R.id.attribute);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +40,8 @@ public class menuqcar extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
-            id= bundle.getString("member_id");
+            id = bundle.getString("member_id");
+            carcare_id = bundle.getString("carcare_id");
             menucarcare.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -90,8 +93,26 @@ public class menuqcar extends AppCompatActivity {
                                     }
                                 }
                             });
-//              Toast.makeText(menuqcar.this,"สำเร็จ",Toast.LENGTH_SHORT).show();
 
+
+                }
+            });
+
+            listattribute.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(menuqcar.this,"สำเร็จส่งID"+id+"และ"+carcare_id,Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(menuqcar.this,MenuattributeActivity.class);
+                    intent.putExtra("member_id",id);
+                    intent.putExtra("carcare_id",carcare_id);
+                    startActivity(intent);
+                }
+            });
+            history.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(menuqcar.this,ReportActivity.class);
+                    startActivity(intent);
                 }
             });
 

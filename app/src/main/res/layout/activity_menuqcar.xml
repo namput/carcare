@@ -63,6 +63,36 @@ android:background="@color/md_amber_500"
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="#ff4997"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/attribute"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+
+                            android:background="@drawable/attributeicon"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"/>
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/colorBackground"
+                            android:text="จัดการรายการ"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     app:cardBackgroundColor="@color/md_blue_grey_700"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
