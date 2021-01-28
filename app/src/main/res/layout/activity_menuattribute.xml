@@ -41,7 +41,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -53,295 +52,246 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <androidx.gridlayout.widget.GridLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:alignmentMode="alignMargins"
-                    app:columnCount="1"
-                    app:columnOrderPreserved="false"
-                    app:rowCount="1">
+                    android:layout_height="match_parent"
+                    android:weightSum="5"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
                         android:text="ชื่อรายการ"
-                        android:textColor="#fff"
-                        android:textSize="18sp"
-                        app:layout_column="0"
-                        app:layout_row="0" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="#fff"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:layout_gravity="bottom">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:gravity="center|left"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawablePadding="12dp"
-                            android:textColor="#004578"
-                            android:imeOptions="actionDone"
-                            android:inputType="text"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp"
-                            android:singleLine="true" />
-                    </androidx.cardview.widget.CardView>
-                </androidx.gridlayout.widget.GridLayout>
-                    <androidx.gridlayout.widget.GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:alignmentMode="alignMargins"
-                    app:columnCount="1"
-                    app:columnOrderPreserved="false"
-                    app:rowCount="1">
-
-                    <TextView
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/aname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="ไซต์ S"
-                        android:textColor="#fff"
-                        android:textSize="18sp"
-                        app:layout_column="0"
-                        app:layout_row="0" />
+                        android:layout_weight="3"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="120dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="#fff"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:layout_gravity="bottom">
-
-                        <com.google.android.material.textfield.TextInputEditText
-
-                            android:gravity="left|center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawablePadding="12dp"
-                            android:textColor="#004578"
-                            android:imeOptions="actionDone"
-                            android:inputType="text"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp"
-                            android:singleLine="true" />
-                    </androidx.cardview.widget.CardView>
-
-                </androidx.gridlayout.widget.GridLayout>
-                <androidx.gridlayout.widget.GridLayout
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:alignmentMode="alignMargins"
-                    app:columnCount="1"
-                    app:columnOrderPreserved="false"
-                    app:rowCount="1">
+                    android:layout_height="match_parent"
+                    android:weightSum="12"
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="S"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sizes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="ไซต์ M"
-                        android:textColor="#fff"
-                        android:textSize="18sp"
-                        app:layout_column="0"
-                        app:layout_row="0" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
+                        android:layout_weight="1.5"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="#fff"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:layout_gravity="bottom">
+                        android:layout_marginTop="10dp"
+                        android:text="นาที"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="M"
+                        android:gravity="right"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sizem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1.5"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="นาที"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:gravity="left|center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawablePadding="12dp"
-                            android:textColor="#004578"
-                            android:imeOptions="actionDone"
-                            android:inputType="text"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp"
-                            android:singleLine="true" />
-                    </androidx.cardview.widget.CardView>
-
-                </androidx.gridlayout.widget.GridLayout>
-                <androidx.gridlayout.widget.GridLayout
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:alignmentMode="alignMargins"
-                    app:columnCount="1"
-                    app:columnOrderPreserved="false"
-                    app:rowCount="1">
+                    android:layout_height="match_parent"
+                    android:weightSum="12"
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="L"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sizel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="ไซต์ L"
-                        android:textColor="#fff"
-                        android:textSize="18sp"
-                        app:layout_column="0"
-                        app:layout_row="0" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
+                        android:layout_weight="1.5"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="#fff"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:layout_gravity="bottom">
+                        android:layout_marginTop="10dp"
+                        android:text="นาที"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="XL"
+                        android:gravity="right"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sizexl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1.5"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="นาที"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:gravity="left|center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawablePadding="12dp"
-                            android:textColor="#004578"
-                            android:imeOptions="actionDone"
-                            android:inputType="text"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp"
-                            android:singleLine="true" />
-                    </androidx.cardview.widget.CardView>
-
-                </androidx.gridlayout.widget.GridLayout>
-                <androidx.gridlayout.widget.GridLayout
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:alignmentMode="alignMargins"
-                    app:columnCount="1"
-                    app:columnOrderPreserved="false"
-                    app:rowCount="1">
+                    android:layout_height="match_parent"
+                    android:weightSum="5"
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="XXL"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="1.5"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sizexxl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="ไซต์ XL"
-                        android:textColor="#fff"
-                        android:textSize="18sp"
-                        app:layout_column="0"
-                        app:layout_row="0" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="#fff"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:layout_gravity="bottom">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:gravity="left|center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawablePadding="12dp"
-                            android:textColor="#004578"
-                            android:imeOptions="actionDone"
-                            android:inputType="text"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp"
-                            android:singleLine="true" />
-                    </androidx.cardview.widget.CardView>
-
-                </androidx.gridlayout.widget.GridLayout>
-                <androidx.gridlayout.widget.GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:alignmentMode="alignMargins"
-                    app:columnCount="1"
-                    app:columnOrderPreserved="false"
-                    app:rowCount="1">
-
+                        android:layout_weight="1.2"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="นาที"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="1"
+                        android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/addattribute"
+                        style="@style/Button1"
+                        android:layout_width="100dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="ไซต์ XXL"
-                        android:textColor="#fff"
-                        android:textSize="18sp"
-                        app:layout_column="0"
-                        app:layout_row="0" />
+                        android:text="เพิ่มรายการ" />
+                </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="#fff"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:layout_gravity="bottom">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/lon"
-                            android:gravity="left|center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawablePadding="12dp"
-                            android:textColor="#004578"
-                            android:imeOptions="actionDone"
-                            android:inputType="text"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp"
-                            android:singleLine="true" />
-                    </androidx.cardview.widget.CardView>
-
-                </androidx.gridlayout.widget.GridLayout>
-
-                <Button
-                    android:id="@+id/savecar"
-                    style="@style/Button1"
-                    android:layout_width="342dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="ปรับปรุงข้อมูล" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_below="@id/li"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -359,7 +309,6 @@
             </LinearLayout>
 
         </RelativeLayout>
-
 
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

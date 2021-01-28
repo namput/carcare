@@ -5,35 +5,33 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="1dp">
 
     <LinearLayout
         android:id="@+id/contact"
         android:radius="20dp"
-        android:gradientRadius="10dp"
         android:orientation="vertical"
-        android:padding="5dp"
-        android:background="@drawable/shapehistory"
-        android:gravity="center"
+        android:padding="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView1"
-            android:textColor="@color/md_blue_grey_900"
-            android:text="จำนวน"
+            android:id="@+id/textView"
+            android:textColor="#004578"
+            android:text="ช่วยเหลือ"
             android:fontFamily="@font/mitrregular"
-            android:textSize="20dp"
-
+            android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
         <TextView
             android:id="@+id/textView2"
-            android:fontFamily="@font/mitrregular"
-            android:textColor="@color/md_cyan_900"
-            android:text="วันที่"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
 
     </LinearLayout>
 </LinearLayout>

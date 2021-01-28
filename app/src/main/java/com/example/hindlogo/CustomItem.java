@@ -29,7 +29,7 @@ class ViewHolder{
 class CustomAdapter extends ArrayAdapter {
     private Context mContext;
     private ArrayList<CustomItem> mITems;
-    private ViewHolder mHolder;
+    private AViewHolder mHolder;
 
     public CustomAdapter(Context context, ArrayList<CustomItem> items){
         super(context,0,items);
@@ -42,13 +42,13 @@ class CustomAdapter extends ArrayAdapter {
         if (convertView==null){
             LayoutInflater inflater= LayoutInflater.from(mContext);
             convertView=inflater.inflate(R.layout.listmember,parent,false);
-            mHolder=new ViewHolder(convertView);
+            mHolder=new AViewHolder(convertView);
             convertView.setTag(mHolder);
         }else {
-            mHolder=(ViewHolder)convertView.getTag();
+            mHolder=(AViewHolder)convertView.getTag();
         }
         CustomItem item =mITems.get(pos);
-        mHolder.textViewContent.setText(item.content);
+        mHolder.textViewName.setText(item.content);
 
         return convertView;
     }

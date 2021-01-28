@@ -30,4 +30,6 @@
     <string name="listmembercarcare">listmembercarcare</string>
     <string name="gettoken">gettoken</string>
     <string name="listattribute">listattribute</string>
+    <string name="addattribute">addattribute</string>
+    <string name="listreportqueue">listreportqueue</string>
 </resources>

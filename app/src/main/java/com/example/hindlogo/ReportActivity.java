@@ -3,12 +3,57 @@ package com.example.hindlogo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
+
+import java.util.ArrayList;
 
 public class ReportActivity extends AppCompatActivity {
+    String id,carcare_id;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+        String url = getString(R.string.url);
+        String urlreport = getString(R.string.listreportqueue);
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null){
+            id = bundle.getString("member_id");
+            carcare_id = bundle.getString("carcare_id");
+            Ion.with(ReportActivity.this)
+                    .load(url+urlreport)
+                    .setBodyParameter("carcare_id",carcare_id)
+                    .asJsonArray()
+                    .setCallback(new FutureCallback<JsonArray>() {
+                        @Override
+                        public void onCompleted(Exception e, JsonArray result) {
+//                            Toast.makeText(ReportActivity.this,""+result,Toast.LENGTH_LONG).show();
+                            ArrayList<ReportcustomItem> itemArray=new ArrayList<>();
+                            if (result != null) {
+                                int len = result.size();
+                                for (int i=0;i<len;i++){
+                                    JsonObject item=(JsonObject)result.get(i);
+                                    String permissions_id =item.get("dates").getAsString();
+                                    String member_name =item.get("num").getAsString();
+                                    itemArray.add(new ReportcustomItem(permissions_id,member_name));
+                                }
+                            }else {
+                                Toast.makeText(ReportActivity.this,""+result,Toast.LENGTH_LONG).show();
+                            }
+
+                            ReportcustomAdapter adapter = new ReportcustomAdapter(getBaseContext(),itemArray);
+                            listView=(ListView)findViewById(R.id.listView);
+                            listView.setAdapter(adapter);
+                        }
+                    });
+        }
     }
 }

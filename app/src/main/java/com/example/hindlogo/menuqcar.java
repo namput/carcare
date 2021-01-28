@@ -101,7 +101,7 @@ public class menuqcar extends AppCompatActivity {
             listattribute.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(menuqcar.this,"สำเร็จส่งID"+id+"และ"+carcare_id,Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(menuqcar.this,"สำเร็จส่งID"+id+"และ"+carcare_id,Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(menuqcar.this,MenuattributeActivity.class);
                     intent.putExtra("member_id",id);
                     intent.putExtra("carcare_id",carcare_id);
@@ -112,7 +112,10 @@ public class menuqcar extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(menuqcar.this,ReportActivity.class);
+                    intent.putExtra("member_id",id);
+                    intent.putExtra("carcare_id",carcare_id);
                     startActivity(intent);
+
                 }
             });
 
