@@ -1,8 +1,11 @@
 package com.example.hindlogo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,6 +26,16 @@ public class ReportActivity extends AppCompatActivity {
         setContentView(R.layout.activity_report);
         String url = getString(R.string.url);
         String urlreport = getString(R.string.listreportqueue);
+
+        // toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null){
@@ -55,5 +68,13 @@ public class ReportActivity extends AppCompatActivity {
                         }
                     });
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

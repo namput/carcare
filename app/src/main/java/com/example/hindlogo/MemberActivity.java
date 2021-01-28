@@ -35,6 +35,7 @@ public class MemberActivity extends AppCompatActivity {
     CheckBox permission1;
     CheckBox permission2;
     CheckBox permission3;
+    CheckBox permission4;
     String urladdmember;
     Spinner spinner;
 
@@ -55,6 +56,7 @@ public class MemberActivity extends AppCompatActivity {
         permission1 = (CheckBox)findViewById(R.id.permission1);
         permission2 = (CheckBox)findViewById(R.id.permission2);
         permission3 = (CheckBox)findViewById(R.id.permission3);
+        permission4 = (CheckBox)findViewById(R.id.permission4);
         spinner = (Spinner) findViewById(R.id.spinner);
         Button addmember = (Button) findViewById(R.id.addmember);
 
@@ -86,6 +88,7 @@ public class MemberActivity extends AppCompatActivity {
                         .setBodyParameter("permission1", String.valueOf(permission1.isChecked()))
                         .setBodyParameter("permission2", String.valueOf(permission2.isChecked()))
                         .setBodyParameter("permission3", String.valueOf(permission3.isChecked()))
+                        .setBodyParameter("permission4", String.valueOf(permission4.isChecked()))
                         .asString()
                         .setCallback(new FutureCallback<String>() {
                             @Override

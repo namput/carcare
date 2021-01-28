@@ -18,13 +18,17 @@ public class menuqcar extends AppCompatActivity {
     private String id;
     private String carcare_id;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuqcar);
         final String urlcheckstatus = getString(R.string.checkstatus);
         final String urlmenucarcare = getString(R.string.menucarcare);
+        final String urlmenuattribute = getString(R.string.menuattribute);
+        final String urlmenuqueue = getString(R.string.menuqueue);
         final String url = getString(R.string.url);
+        final String urlmenureport = getString(R.string.menureport);
         final LinearLayout menucarcare = (LinearLayout) findViewById(R.id.listcar);
         final LinearLayout logout = (LinearLayout) findViewById(R.id.menulogout);
         final LinearLayout queue = (LinearLayout) findViewById(R.id.queue);
@@ -101,21 +105,76 @@ public class menuqcar extends AppCompatActivity {
             listattribute.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Toast.makeText(menuqcar.this,"สำเร็จส่งID"+id+"และ"+carcare_id,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(menuqcar.this,MenuattributeActivity.class);
-                    intent.putExtra("member_id",id);
-                    intent.putExtra("carcare_id",carcare_id);
-                    startActivity(intent);
+                    Ion.with(menuqcar.this)
+                            .load(url+urlmenuattribute)
+                            .setBodyParameter("member_id",id)
+                            .asString()
+                            .setCallback(new FutureCallback<String>() {
+                                @Override
+                                public void onCompleted(Exception e, String result) {
+                                    int check = Integer.parseInt(result);
+                                    if (check==1){
+                                        Intent intent = new Intent(menuqcar.this,MenuattributeActivity.class);
+                                        intent.putExtra("member_id",id);
+                                        intent.putExtra("carcare_id",carcare_id);
+                                        startActivity(intent);
+                                    }else {
+                                        Toast.makeText(menuqcar.this,"ไม่ได้รับอนุญาติ",Toast.LENGTH_LONG).show();
+                                    }
+
+                                }
+                            });
+
                 }
             });
             history.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(menuqcar.this,ReportActivity.class);
-                    intent.putExtra("member_id",id);
-                    intent.putExtra("carcare_id",carcare_id);
-                    startActivity(intent);
+                    Ion.with(menuqcar.this)
+                            .load(url+urlmenureport)
+                            .setBodyParameter("member_id",id)
+                            .asString()
+                            .setCallback(new FutureCallback<String>() {
+                                @Override
+                                public void onCompleted(Exception e, String result) {
+                                    int check = Integer.parseInt(result);
+                                    if (check==1){
+                                        Intent intent = new Intent(menuqcar.this,ReportActivity.class);
+                                        intent.putExtra("member_id",id);
+                                        intent.putExtra("carcare_id",carcare_id);
+                                        startActivity(intent);
+                                    }else {
+                                        Toast.makeText(menuqcar.this,"ไม่ได้รับอนุญาติ",Toast.LENGTH_LONG).show();
+                                    }
 
+                                }
+                            });
+
+
+                }
+            });
+            queue.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Ion.with(menuqcar.this)
+                            .load(url+urlmenuqueue)
+                            .setBodyParameter("member_id",id)
+                            .asString()
+                            .setCallback(new FutureCallback<String>() {
+                                @Override
+                                public void onCompleted(Exception e, String result) {
+                                    int check = Integer.parseInt(result);
+                                    if (check==1){
+                                        Intent intent = new Intent(menuqcar.this,QueueActivity.class);
+                                        intent.putExtra("member_id",id);
+                                        intent.putExtra("carcare_id",carcare_id);
+                                        startActivity(intent);
+                                    }else {
+                                        Toast.makeText(menuqcar.this,"ไม่ได้รับอนุญาติ",Toast.LENGTH_LONG).show();
+                                    }
+
+                                }
+                            });
                 }
             });
 

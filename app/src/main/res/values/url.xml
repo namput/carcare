@@ -32,4 +32,7 @@
     <string name="listattribute">listattribute</string>
     <string name="addattribute">addattribute</string>
     <string name="listreportqueue">listreportqueue</string>
+    <string name="menureport">menureport</string>
+    <string name="menuattribute">menuattribute</string>
+    <string name="menuqueue">menuqueue</string>
 </resources>

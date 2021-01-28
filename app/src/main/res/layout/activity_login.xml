@@ -48,7 +48,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/phone"
-                        android:text="0123456789"
+                        android:hint="เบอร์โทร"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -84,7 +84,6 @@
 
                     <EditText
                         android:id="@+id/password"
-                        android:text="123456"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -94,7 +93,7 @@
                         android:drawableStart="@drawable/ic_lock"
                         android:drawableLeft="@drawable/ic_lock"
                         android:drawablePadding="12dp"
-                        android:hint="Password"
+                        android:hint="รหัสผ่าน"
                         android:imeOptions="actionDone"
                         android:inputType="textPassword"
                         android:minWidth="320dp"

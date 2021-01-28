@@ -11,7 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Newcar">
-        <activity android:name=".ReportActivity"></activity>
+        <activity android:name=".QueueActivity">
+            <intent-filter>
+                <action android:name="OPEN_FROM_NOTIFICATION_QUEUE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ReportActivity" >
+            <intent-filter>
+                <action android:name="OPEN_FROM_NOTIFICATION_REPORT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MenuattributeActivity" />
 
         <service android:name=".MyFirebaseMessagingService">

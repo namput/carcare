@@ -68,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#009688"
                         android:checked="true"
-                        android:text="สิทธิ์ในการจัดการระบบบริหารคาร์แคร์"
+                        android:text="สิทธิ์ในการจัดการรายการ"
                         android:textColor="#fff" />
 
                     <CheckBox
@@ -87,6 +87,15 @@
                         android:buttonTint="#E91E63"
                         android:checked="true"
                         android:text="สิทธิ์ในการดูประวัติ"
+                        android:textColor="#fff" />
+
+                    <CheckBox
+                        android:id="@+id/permission4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#00BCD4"
+                        android:checked="true"
+                        android:text="สิทธิ์ในการจัดการคิว"
                         android:textColor="#fff" />
 
                 </androidx.gridlayout.widget.GridLayout>
