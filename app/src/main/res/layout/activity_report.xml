@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/actionbarOpacity"
-        app:title="ระบบจัดการร้านคาร์แคร์"
+        app:title="ระบบรายงานยอดการจองคิวสำเร็จ"
         app:titleTextColor="#fff"
         app:theme="@style/TransparentToolbar"
         app:navigationIcon="@drawable/ic_back_white"/>

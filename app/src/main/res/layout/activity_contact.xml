@@ -153,6 +153,16 @@
                                 android:layout_marginBottom="8dp"
                                 android:textStyle="bold" />
                             <TextView
+                                android:id="@+id/abc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="วท.บ.เทคโนโลยีสารสนเทศ"
+                                android:textColor="@color/md_amber_A400"
+                                android:textSize="18sp"
+                                android:layout_marginBottom="8dp"
+                                android:textStyle="bold" />
+                            <TextView
 
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -199,16 +209,7 @@
                                 android:textSize="18sp"
                                 android:layout_marginBottom="8dp"
                                 android:textStyle="bold" />
-                            <TextView
-                                android:id="@+id/abc"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="ผศ.อำนาจ ทับเกิด"
-                                android:textColor="@color/colorBackground"
-                                android:textSize="18sp"
-                                android:layout_marginBottom="8dp"
-                                android:textStyle="bold" />
+
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 

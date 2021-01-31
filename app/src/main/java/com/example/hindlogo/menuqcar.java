@@ -3,6 +3,7 @@ package com.example.hindlogo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -35,17 +36,18 @@ public class menuqcar extends AppCompatActivity {
         final LinearLayout history = (LinearLayout) findViewById(R.id.history);
         final LinearLayout listattribute = (LinearLayout) findViewById(R.id.attribute);
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(menuqcar.this,ContactActivity.class));
-            }
-        });
-
-        Bundle bundle = getIntent().getExtras();
-        if (bundle!=null){
-            id = bundle.getString("member_id");
-            carcare_id = bundle.getString("carcare_id");
+        SharedPreferences check_login = getSharedPreferences("CHECK_LOGIN",MODE_PRIVATE);
+        boolean check = check_login.getBoolean("login_status",false);
+        id =check_login.getString("member_id",null);
+        carcare_id =check_login.getString("carcare_id",null);
+        Intent intent;
+        if (check == true && id != null) {
+            logout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(menuqcar.this,ContactActivity.class));
+                }
+            });
             menucarcare.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -67,7 +69,7 @@ public class menuqcar extends AppCompatActivity {
 
                                         switch (carcare_lat){
                                             case "null":carcare_lat = null;
-                                            break;
+                                                break;
                                             case "":carcare_lat = null;
                                                 break;
                                             default:carcare_lat = result.get("carcare_lat").getAsString();
@@ -97,8 +99,6 @@ public class menuqcar extends AppCompatActivity {
                                     }
                                 }
                             });
-
-
                 }
             });
 
@@ -124,7 +124,6 @@ public class menuqcar extends AppCompatActivity {
 
                                 }
                             });
-
                 }
             });
             history.setOnClickListener(new View.OnClickListener() {
@@ -146,11 +145,8 @@ public class menuqcar extends AppCompatActivity {
                                     }else {
                                         Toast.makeText(menuqcar.this,"ไม่ได้รับอนุญาติ",Toast.LENGTH_LONG).show();
                                     }
-
                                 }
                             });
-
-
                 }
             });
             queue.setOnClickListener(new View.OnClickListener() {
@@ -172,16 +168,14 @@ public class menuqcar extends AppCompatActivity {
                                     }else {
                                         Toast.makeText(menuqcar.this,"ไม่ได้รับอนุญาติ",Toast.LENGTH_LONG).show();
                                     }
-
                                 }
                             });
                 }
             });
-
+        }else {
+            intent = new Intent(menuqcar.this, login.class);
+            startActivity(intent);
+            finish();
         }
-
-
-
     }
-
 }

@@ -39,6 +39,7 @@ public class AddnameActivity extends AppCompatActivity {
                             intent.putExtra("member_id", mid);
                             intent.putExtra("member_name", membername);
                             startActivity(intent);
+                            finish();
 
                         }
                     });

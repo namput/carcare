@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -38,9 +40,12 @@ public class ReportActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        if (bundle != null){
-            id = bundle.getString("member_id");
-            carcare_id = bundle.getString("carcare_id");
+        SharedPreferences check_login = getSharedPreferences("CHECK_LOGIN",MODE_PRIVATE);
+        boolean check = check_login.getBoolean("login_status",false);
+        String member_id =check_login.getString("member_id",null);
+        String carcare_id =check_login.getString("carcare_id",null);
+        Intent intent;
+        if (check == true && member_id != null) {
             Ion.with(ReportActivity.this)
                     .load(url+urlreport)
                     .setBodyParameter("carcare_id",carcare_id)
@@ -67,11 +72,20 @@ public class ReportActivity extends AppCompatActivity {
                             listView.setAdapter(adapter);
                         }
                     });
+        }else {
+            intent = new Intent(ReportActivity.this, login.class);
+            startActivity(intent);
+            finish();
         }
+
+
+
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
+           Intent intent = new Intent(ReportActivity.this, menuqcar.class);
+            startActivity(intent);
             finish(); // close this activity and return to preview activity (if there is any)
         }
 
