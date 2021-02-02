@@ -37,4 +37,6 @@
     <string name="menuqueue">menuqueue</string>
     <string name="queueing">queueing</string>
     <string name="queue_detail">queue_detail</string>
+    <string name="callqueue">callqueue</string>
+    <string name="changstatus">changstatus</string>
 </resources>

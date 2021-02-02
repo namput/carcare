@@ -38,8 +38,6 @@ public class ReportActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        Bundle bundle = getIntent().getExtras();
-
         SharedPreferences check_login = getSharedPreferences("CHECK_LOGIN",MODE_PRIVATE);
         boolean check = check_login.getBoolean("login_status",false);
         String member_id =check_login.getString("member_id",null);
