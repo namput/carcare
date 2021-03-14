@@ -79,12 +79,12 @@ public class MemberActivity extends AppCompatActivity {
         addmember.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+//                Toast.makeText(MemberActivity.this,"member_id"+member_id+"carcare_id"+carcare_id+"idmember_carcare"+idmember_carcare+"permission1"+permission1.isChecked()+"permission2"+permission2.isChecked()+"permission3"+permission3.isChecked()+"permission4"+permission4.isChecked() , Toast.LENGTH_SHORT).show();
                 Ion.with(MemberActivity.this)
                         .load(url+urladdmember)
                         .setBodyParameter("member_id",member_id)
                         .setBodyParameter("carcare_id",carcare_id)
-                        .setBodyParameter("addmember_id",idmember_carcare)
+                        .setBodyParameter("member_carcare",idmember_carcare)
                         .setBodyParameter("permission1", String.valueOf(permission1.isChecked()))
                         .setBodyParameter("permission2", String.valueOf(permission2.isChecked()))
                         .setBodyParameter("permission3", String.valueOf(permission3.isChecked()))
@@ -159,24 +159,24 @@ public class MemberActivity extends AppCompatActivity {
                                 JsonObject item = (JsonObject)result.get(i);
                                 String id = item.get("member_id").getAsString();
                                 String name = item.get("member_name").getAsString();
-                                itemArray.add(new Contact(name,id));
+                                itemArray.add(new Contact(id,name));
                             }
                         }
-                        ArrayAdapter<Contact> adapter =
-                                new ArrayAdapter<Contact>(getApplicationContext(), R.layout.row, itemArray);
-                        adapter.setDropDownViewResource(R.layout.row);
 
+                        ArrayAdapter<Contact> adapter = new ArrayAdapter<Contact>(MemberActivity.this, android.R.layout.simple_spinner_dropdown_item, itemArray);
                         spinner.setAdapter(adapter);
                         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             @Override
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                Contact item = itemArray.get(position);
-                                idmember_carcare = item.getContact_id();
+
+                                Contact item = (Contact) parent.getSelectedItem();
+                                idmember_carcare = item.getId();
+//                                Toast.makeText(MemberActivity.this,idmember_carcare,Toast.LENGTH_LONG).show();
+
                             }
 
                             @Override
                             public void onNothingSelected(AdapterView<?> parent) {
-
                             }
                         });
                     }

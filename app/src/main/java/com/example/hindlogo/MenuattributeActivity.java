@@ -30,6 +30,11 @@ public class MenuattributeActivity extends AppCompatActivity {
     TextInputEditText sizel;
     TextInputEditText sizexl;
     TextInputEditText sizexxl;
+    TextInputEditText p1;
+    TextInputEditText p2;
+    TextInputEditText p3;
+    TextInputEditText p4;
+    TextInputEditText p5;
     String url;
     String urllistattribute;
     String urladdattribute;
@@ -51,6 +56,11 @@ public class MenuattributeActivity extends AppCompatActivity {
         sizel = (TextInputEditText)findViewById(R.id.sizel);
         sizexl = (TextInputEditText)findViewById(R.id.sizexl);
         sizexxl = (TextInputEditText)findViewById(R.id.sizexxl);
+        p1 = (TextInputEditText)findViewById(R.id.ps);
+        p2 = (TextInputEditText)findViewById(R.id.pm);
+        p3 = (TextInputEditText)findViewById(R.id.pl);
+        p4 = (TextInputEditText)findViewById(R.id.pxl);
+        p5 = (TextInputEditText)findViewById(R.id.pxxl);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
@@ -77,6 +87,11 @@ public class MenuattributeActivity extends AppCompatActivity {
                 String msizel = sizel.getText().toString();
                 String msizexl = sizexl.getText().toString();
                 String msizexxl = sizexxl.getText().toString();
+                String ps = p1.getText().toString();
+                String pm = p2.getText().toString();
+                String pl = p3.getText().toString();
+                String pxl = p4.getText().toString();
+                String pxxl = p5.getText().toString();
                 Ion.with(MenuattributeActivity.this)
                         .load(url+urladdattribute)
                         .setBodyParameter("carcare_id",carcare_id)
@@ -86,6 +101,11 @@ public class MenuattributeActivity extends AppCompatActivity {
                         .setBodyParameter("sizel",msizel)
                         .setBodyParameter("sizexl",msizexl)
                         .setBodyParameter("sizexxl",msizexxl)
+                        .setBodyParameter("ps",ps)
+                        .setBodyParameter("pm",pm)
+                        .setBodyParameter("pl",pl)
+                        .setBodyParameter("pxl",pxl)
+                        .setBodyParameter("pxxl",pxxl)
                         .asString().setCallback(new FutureCallback<String>() {
                     @Override
                     public void onCompleted(Exception e, String result) {

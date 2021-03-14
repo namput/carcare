@@ -2,6 +2,7 @@ package com.example.hindlogo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -86,7 +87,6 @@ public class login extends AppCompatActivity {
                                     if (result!=null){
                                         String member_id=result.get("member_id").getAsString();
                                         String carcare_id=result.get("carcare_id").getAsString();
-//                                    Toast.makeText(com.example.hindlogo.login.this,""+carcare_id,Toast.LENGTH_LONG).show();
                                         Ion.with(com.example.hindlogo.login.this)
                                                 .load(url+urlgettoken)
                                                 .setBodyParameter("token",token)
@@ -125,34 +125,7 @@ public class login extends AppCompatActivity {
         crecate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final ProgressDialog dialog=new ProgressDialog(login.this);
-                dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                dialog.setMessage("รอสักครู่...");
-                dialog.setIndeterminate(true);
-                dialog.show();
-                Ion.with(login.this)
-                        .load(url+urlcreate)
-                        .setBodyParameter("phone",phone.getText().toString())
-                        .setBodyParameter("pass",password.getText().toString())
-                        .setBodyParameter("type","2")
-                        .asJsonObject()
-                        .setCallback(new FutureCallback<JsonObject>() {
-                            @Override
-                            public void onCompleted(Exception e, JsonObject result) {
-                                dialog.dismiss();
-                                if (result!=null){
-                                    String member_id=result.get("member_id").getAsString();
-                                    String member_phone=result.get("member_phone").getAsString();
-                                    Intent intent=new Intent(login.this,AddnameActivity.class);
-                                    intent.putExtra("member_id",member_id);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                                else {
-                                    Toast.makeText(login.this,"ไม่สามารถสมัครสมาชิกได้",Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });
+                startActivity(new Intent(com.example.hindlogo.login.this,CreateActivity.class));
             }
         });
     }

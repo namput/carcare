@@ -118,6 +118,7 @@
                         android:minHeight="45dp"
                         android:singleLine="true" />
                     <TextView
+                        android:id="@+id/p1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -131,14 +132,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
-                        android:text="M"
+                        android:text="ราคา"
                         android:gravity="right"
                         android:textColor="#FFF"
                         android:textSize="20sp"
                         android:layout_weight="2"
                         android:textStyle="bold" />
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/sizem"
+                        android:id="@+id/ps"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -156,7 +157,85 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:text="บาท"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="12"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="M"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sizem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1.5"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:text="นาที"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="ราคา"
+                        android:gravity="right"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1.5"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="บาท"
                         android:textColor="#FFF"
                         android:textSize="20sp"
                         android:layout_weight="2"
@@ -209,14 +288,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
-                        android:text="XL"
+                        android:text="ราคา"
                         android:gravity="right"
                         android:textColor="#FFF"
                         android:textSize="20sp"
                         android:layout_weight="2"
                         android:textStyle="bold" />
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/sizexl"
+                        android:id="@+id/pl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -234,7 +313,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="นาที"
+                        android:text="บาท"
                         android:textColor="#FFF"
                         android:textSize="20sp"
                         android:layout_weight="2"
@@ -244,26 +323,26 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:weightSum="5"
+                    android:weightSum="12"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-
+                        android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp"
                         android:gravity="right"
-                        android:text="XXL"
+                        android:text="XL"
                         android:textColor="#FFF"
                         android:textSize="20sp"
-                        android:layout_weight="1.5"
+                        android:layout_weight="2"
                         android:textStyle="bold" />
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/sizexxl"
+                        android:id="@+id/sizexl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1.2"
+                        android:layout_weight="1.5"
                         android:shadowRadius="20"
                         android:background="@android:color/white"
                         android:drawablePadding="12dp"
@@ -280,17 +359,131 @@
                         android:text="นาที"
                         android:textColor="#FFF"
                         android:textSize="20sp"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:textStyle="bold" />
-                    <Button
-                        android:id="@+id/addattribute"
-                        style="@style/Button1"
-                        android:layout_width="100dp"
-                        android:layout_weight="1"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="ราคา"
+                        android:gravity="right"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pxl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1.5"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="เพิ่มรายการ" />
+                        android:text="บาท"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="12"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="XXL"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sizexxl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1.5"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="นาที"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="ราคา"
+                        android:gravity="right"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pxxl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1.5"
+                        android:shadowRadius="20"
+                        android:background="@android:color/white"
+                        android:drawablePadding="12dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="#004578"
+                        android:inputType="text"
+                        android:minWidth="30dp"
+                        android:minHeight="45dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="บาท"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:layout_weight="2"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <Button
+                    android:id="@+id/addattribute"
+                    style="@style/Button1"
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="เพิ่มรายการ" />
 
                 <TextView
                     android:layout_width="wrap_content"

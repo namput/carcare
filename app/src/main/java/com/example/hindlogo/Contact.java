@@ -1,41 +1,45 @@
 package com.example.hindlogo;
 
 public class Contact {
-    private String contact_name;
-    private String contact_id;
-
-    public Contact() {
+    private String id;
+    private String name;
+    public Contact(String id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public Contact(String contact_name, String contact_id) {
-        this.contact_name = contact_name;
-        this.contact_id = contact_id;
+
+    public String getId() {
+        return id;
     }
 
-    public String getContact_name() {
-        return contact_name;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setContact_name(String contact_name) {
-        this.contact_name = contact_name;
+    public String getName() {
+        return name;
     }
 
-    public String getContact_id() {
-        return contact_id;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setContact_id(String contact_id) {
-        this.contact_id = contact_id;
-    }
 
-    /**
-     * Pay attention here, you have to override the toString method as the
-     * ArrayAdapter will reads the toString of the given object for the name
-     *
-     * @return contact_name
-     */
+    //to display object as a string in spinner
     @Override
     public String toString() {
-        return contact_name;
+        return name;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Contact){
+            Contact c = (Contact)obj;
+            if(c.getName().equals(name) && c.getId()==id ) return true;
+        }
+
+        return false;
+    }
+
 }

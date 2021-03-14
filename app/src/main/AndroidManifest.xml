@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,15 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Newcar">
+        <activity android:name=".CreateActivity"></activity>
         <activity android:name=".QueueActivity">
             <intent-filter>
                 <action android:name="OPEN_FROM_NOTIFICATION_QUEUE" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReportActivity" >
+        <activity android:name=".ReportActivity">
             <intent-filter>
                 <action android:name="OPEN_FROM_NOTIFICATION_REPORT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

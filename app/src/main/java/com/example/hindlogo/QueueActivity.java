@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.messaging.RemoteMessage;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
@@ -29,6 +30,7 @@ import com.koushikdutta.ion.Ion;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Map;
 
 public class QueueActivity extends AppCompatActivity {
     String member_id;
@@ -61,6 +63,8 @@ public class QueueActivity extends AppCompatActivity {
         urlcallqueue = getString(R.string.callqueue);
         urlchangstatus = getString(R.string.changstatus);
 
+
+
         Date date = new Date();
         stringDate = DateFormat.getDateInstance(DateFormat.SHORT).format(date);
 
@@ -69,6 +73,7 @@ public class QueueActivity extends AppCompatActivity {
         member_id =check_login.getString("member_id",null);
         carcare_id =check_login.getString("carcare_id",null);
         Intent intent;
+        
         if (check == true && member_id != null) {
 
             updatequeues();
@@ -132,10 +137,18 @@ public class QueueActivity extends AppCompatActivity {
                         QcustomAdapter adapter = new QcustomAdapter(getBaseContext(),itemArray);
                         listView=(ListView)findViewById(R.id.listView);
                         listView.setAdapter(adapter);
-                        swipeContainer.setRefreshing(false);
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                QcustomItem item = itemArray.get(position);
+                                queue_id = item.queue_id;
+                                showAlertDialogSuccess(R.layout.fragment_detail_2);
+                            }
+                        });
 
                     }
                 });
+
         Ion.with(QueueActivity.this)
                 .load(url+urlqueueing)
                 .setBodyParameter("carcare_id",carcare_id)
@@ -171,10 +184,89 @@ public class QueueActivity extends AppCompatActivity {
 
                             }
                         });
-
+                        swipeContainer.setRefreshing(false);
                     }
                 });
 
+    }
+    private void showAlertDialogSuccess(int layout){
+
+        Ion.with(QueueActivity.this)
+                .load(url+urlqueue_detail)
+                .setBodyParameter("queue_id",queue_id)
+                .asJsonArray()
+                .setCallback(new FutureCallback<JsonArray>() {
+                    @Override
+                    public void onCompleted(Exception e, JsonArray result) {
+                        ArrayList<String> itemArray=new ArrayList<String>();
+                        if (result != null) {
+                            JsonObject item=(JsonObject)result.get(0);
+                            String queue_id =item.get("queue_id").getAsString();
+                            String car_member_number =item.get("car_member_number").getAsString();
+                            String car_service_name =item.get("car_service_name").getAsString();
+                            String color_name =item.get("color_name").getAsString();
+                            member_name =item.get("member_name").getAsString();
+                            member_phone =item.get("member_phone").getAsString();
+                            String car_member_brand =item.get("car_member_brand").getAsString();
+                            JsonArray items=(JsonArray)result.get(1);
+                            int len = items.size();
+                            for (int i=0;i<len;i++){
+                                JsonObject itemss=(JsonObject)items.get(i);
+                                String attribute_name =itemss.get("attribute_name").getAsString();
+                                itemArray.add(attribute_name);
+                            }
+
+                            dialogBuilder = new AlertDialog.Builder(QueueActivity.this);
+                            layoutView = getLayoutInflater().inflate(layout, null);
+                            TextView car =layoutView.findViewById(R.id.tvTitle);
+                            TextView name =layoutView.findViewById(R.id.tvMessage);
+                            TextView phone =layoutView.findViewById(R.id.tvMessag);
+                            TextView colorandbrand =layoutView.findViewById(R.id.tvMessa);
+
+                            car.setText(car_service_name);
+                            name.setText("ชื่อเจ้าของรถ "+member_name);
+                            phone.setText("เบอร์ติดต่อ "+member_phone);
+                            colorandbrand.setText("แบรนด์ "+car_member_brand+" สีรถ "+color_name+" ทะเบียนรถ "+car_member_number);
+                            phone.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent();
+                                    intent.setAction(Intent.ACTION_DIAL); // Action for what intent called for
+                                    intent.setData(Uri.parse("tel:+66" + member_phone)); // Data with intent respective action on intent
+                                    startActivity(intent);
+                                }
+                            });
+                            ArrayAdapter < String > dataAdapter = new ArrayAdapter< String >
+                                    ( QueueActivity.this, android.R.layout.simple_list_item_1, itemArray );
+                            ListView listview = layoutView.findViewById ( R.id.listview );
+                            listview.setAdapter ( dataAdapter );
+
+                            Button btnSuccess = layoutView.findViewById(R.id.btnSuccess);
+                            Button btnCancel = layoutView.findViewById(R.id.btnCancel);
+                            dialogBuilder.setView(layoutView);
+                            alertDialog = dialogBuilder.create();
+                            alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            alertDialog.show();
+                            btnSuccess.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    alertDialog.dismiss();
+                                    changStatusQueue("3");
+                                }
+
+                            });
+                            btnCancel.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    alertDialog.dismiss();
+                                }
+                            });
+
+                        }
+
+                    }
+                });
     }
     private void showAlertDialog(int layout){
 
@@ -277,26 +369,25 @@ public class QueueActivity extends AppCompatActivity {
                         }
 
                     }
+                });
+    }
+    private void changStatusQueue(String status_id) {
+        Ion.with(QueueActivity.this)
+                .load(url+urlchangstatus)
+                .setBodyParameter("queue_id",queue_id)
+                .setBodyParameter("status_id",status_id)
+                .asString()
+                .setCallback(new FutureCallback<String>() {
+                    @Override
+                    public void onCompleted(Exception e, String result) {
+                        switch (result){
+                            case "1":
+                                Toast.makeText(QueueActivity.this,"ดำเนินการสำเร็จ",Toast.LENGTH_LONG).show();
+                                break;
+                            default:Toast.makeText(QueueActivity.this,"ไม่สำเร็จ",Toast.LENGTH_LONG).show();
+                        }
 
-                    private void changStatusQueue(String status_id) {
-                        Ion.with(QueueActivity.this)
-                                .load(url+urlchangstatus)
-                                .setBodyParameter("queue_id",queue_id)
-                                .setBodyParameter("status_id",status_id)
-                                .asString()
-                                .setCallback(new FutureCallback<String>() {
-                                    @Override
-                                    public void onCompleted(Exception e, String result) {
-                                        switch (result){
-                                            case "1":
-                                            Toast.makeText(QueueActivity.this,"ดำเนินการสำเร็จ",Toast.LENGTH_LONG).show();
-                                            break;
-                                            default:Toast.makeText(QueueActivity.this,"ไม่สำเร็จ",Toast.LENGTH_LONG).show();
-                                        }
-
-                                        updatequeues();
-                                    }
-                                });
+                        updatequeues();
                     }
                 });
     }
